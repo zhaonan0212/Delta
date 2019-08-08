@@ -1,0 +1,9 @@
+com\delta\dao\ApiModuleDao.class
+com\delta\dao\KnowledgeRepoDao.class
+com\delta\dao\SystemCateDao.class
+com\delta\dao\PermissionDao.class
+com\delta\dao\UserDao.class
+com\delta\dao\ExceptionNumberDao.class
+com\delta\dao\DataDicDao.class
+com\delta\dao\KnowledgeCateDao.class
+com\delta\dao\RoleDao.class

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/security
+    http://www.springframework.org/schema/security/spring-security.xsd">
+
+
+    <!--加密对象-->
+    <bean id="bCryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
+
+    <!--放行的地址-->
+    <security:http pattern="/*.jsp" security="none"/>
+    <security:http pattern="/css/**" security="none"/>
+    <security:http pattern="/img/**" security="none"/>
+    <security:http pattern="/plugins/**" security="none"/>
+
+    <!--
+        配置要拦截的URL
+        auto-config:自动配置[自动配置那10个过滤器]
+        use-expressions：是否使用SPEL表达式,access="hasRole('ROLE_USER')"
+    -->
+
+    <security:http auto-config="true" use-expressions="true">
+        <!--
+        pattern="/**":拦截所有请求
+        access="ROLE_USER":表示允许ROLE_USER角色访问上面被拦截的地址
+        -->
+        <security:access-denied-handler error-page="/403.jsp"/>
+        <security:intercept-url pattern="/user/**" access="hasRole('ROLE_ADMIN')"/>
+        <security:intercept-url pattern="/role/**" access="hasRole('ROLE_ADMIN')"/>
+        <security:intercept-url pattern="/permission/**" access="hasRole('ROLE_ADMIN')"/>
+        <security:intercept-url pattern="/**" access="hasAnyRole('ROLE_USER','ROLE_ADMIN')"/>
+
+        <security:form-login
+                login-page="/login.jsp"
+                authentication-success-forward-url="/pages/main.jsp"
+                authentication-failure-url="/fail.jsp"
+                login-processing-url="/login"
+        />
+        <security:logout invalidate-session="true"
+                         logout-success-url="/login.jsp"
+                         logout-url="/logout"/>
+
+        <!--关闭csrf安全策略-->
+        <security:csrf disabled="true"/>
+    </security:http>
+    <!--     ====================
+    &lt;!&ndash;定義死的授权配置&ndash;&gt;
+    <security:authentication-manager>
+
+    <security:authentication-provider>
+    <security:user-service>
+    &lt;!&ndash;定义了一个用户，名字是admin 密码使用方式未加密方式 角色是ROLE_USER&ndash;&gt;
+    <security:user name="zhaonan" authorities="ROLE_USER" password="{noop}zhaonan"/>
+</security:user-service>
+</security:authentication-provider>
+</security:authentication-manager>
+    =======-->
+
+
+    <!--從我的數據庫查用戶名登錄-->
+    <security:authentication-manager>
+        <!--使用自定义认证器-->
+        <security:authentication-provider user-service-ref="securityServiceImpl">
+            <!--指定加密方式-->
+            <security:password-encoder ref="bCryptPasswordEncoder"/>
+        </security:authentication-provider>
+    </security:authentication-manager>
+
+
+</beans>

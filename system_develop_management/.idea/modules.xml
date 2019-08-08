@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/system_develop_management.iml" filepath="$PROJECT_DIR$/.idea/system_develop_management.iml" />
+      <module fileurl="file://$PROJECT_DIR$/system_management_dao/system_management_dao.iml" filepath="$PROJECT_DIR$/system_management_dao/system_management_dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/system_management_domain/system_management_domain.iml" filepath="$PROJECT_DIR$/system_management_domain/system_management_domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/system_management_parent/system_management_parent.iml" filepath="$PROJECT_DIR$/system_management_parent/system_management_parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/system_management_service/system_management_service.iml" filepath="$PROJECT_DIR$/system_management_service/system_management_service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/system_management_utils/system_management_utils.iml" filepath="$PROJECT_DIR$/system_management_utils/system_management_utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/system_management_web/system_management_web.iml" filepath="$PROJECT_DIR$/system_management_web/system_management_web.iml" />
+    </modules>
+  </component>
+</project>

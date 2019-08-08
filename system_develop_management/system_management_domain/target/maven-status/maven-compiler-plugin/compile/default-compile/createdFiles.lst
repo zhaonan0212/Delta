@@ -1,0 +1,9 @@
+com\delta\domain\DataDictionary.class
+com\delta\domain\KnowledgeRepository.class
+com\delta\domain\SysDevelopManaRole.class
+com\delta\domain\SysDevelopManaPermission.class
+com\delta\domain\SystemCategory.class
+com\delta\domain\ExceptionNumber.class
+com\delta\domain\ApiModule.class
+com\delta\domain\SysDevelopManaUser.class
+com\delta\domain\KnowledgeCategory.class

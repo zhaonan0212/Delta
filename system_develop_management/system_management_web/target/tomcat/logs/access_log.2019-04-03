@@ -1,0 +1,8 @@
+0:0:0:0:0:0:0:1 - - [03/Apr/2019:10:42:34 +0800] "GET /knowledge_repo/findAll HTTP/1.1" 302 - http-bio-8081-exec-1 102
+0:0:0:0:0:0:0:1 - - [03/Apr/2019:10:42:35 +0800] "GET /permission/findAll HTTP/1.1" 302 - http-bio-8081-exec-2 1039
+0:0:0:0:0:0:0:1 - - [03/Apr/2019:10:42:41 +0800] "POST /login HTTP/1.1" 200 14103 http-bio-8081-exec-5 817
+0:0:0:0:0:0:0:1 - - [03/Apr/2019:10:42:41 +0800] "GET /js/jquery-3.3.1.min.js HTTP/1.1" 200 86929 http-bio-8081-exec-3 86
+0:0:0:0:0:0:0:1 - - [03/Apr/2019:10:42:41 +0800] "GET /js/dark.js HTTP/1.1" 200 3832 http-bio-8081-exec-8 82
+0:0:0:0:0:0:0:1 - - [03/Apr/2019:10:42:41 +0800] "GET /js/echarts-gl.min.js HTTP/1.1" 200 672813 http-bio-8081-exec-7 112
+0:0:0:0:0:0:0:1 - - [03/Apr/2019:10:42:41 +0800] "GET /js/echarts.js HTTP/1.1" 200 2893121 http-bio-8081-exec-6 174
+0:0:0:0:0:0:0:1 - - [03/Apr/2019:10:42:44 +0800] "GET /knowledge_repo/findAll HTTP/1.1" 200 34610 http-bio-8081-exec-6 305
